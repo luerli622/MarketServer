@@ -13,16 +13,21 @@ import copy
 #import signalStrategy
 
 #读取设置参数
-execfile("config.ini")
+execfile(".\config.ini")
 
+#股票代码、股票名称、所属市场对应dic
+g_stockDict = {}
+#所有融资融券代码
+g_smStocks = []
 
 #链接池
 g_linkPool		= {}
-"""
+#"""
 #链接池测试
 g_linkPool["d43d7e34f9d0"] = {
 	"macAddress"		: "d43d7e34f9d0",
-	"subStock"			: ["if1312"],
+	"subStock"			: ["All-sm"],	#All 所有股票代码; All-sm 所有融资融券代码
+	"subInstruments"	: [u"if1312"],
 	"subSingal"			: ["SQTPointBreakSingal"],
 	"subMultiple"		: ["SQTIFandSSEdiffMultiple"],
 	#以上由客户端请求
@@ -35,4 +40,4 @@ g_linkPool["d43d7e34f9d0"] = {
 	"multipleObjDict"	: [],  #key: 股票代码, {key: 策略名，value：策略对象}
 	"signalPool"		: []
 	}
-"""
+#"""
